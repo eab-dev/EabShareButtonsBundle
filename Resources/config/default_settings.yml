@@ -1,0 +1,22 @@
+parameters:
+
+    ez_share_buttons.default.providers:
+        - facebook_like
+        - facebook_recommend
+        - twitter
+        - linkedin
+        - google_plus
+        - xing
+        - pinterest
+
+    # available options are: true, false
+    ez_share_buttons.default.pinterest.round: false
+
+    # available options are: en, ja
+    ez_share_buttons.default.pinterest.language: en
+
+    # available options are: red, white, grey
+    ez_share_buttons.default.pinterest.color: gray
+
+    # available options are: true, false
+    ez_share_buttons.default.pinterest.large: false

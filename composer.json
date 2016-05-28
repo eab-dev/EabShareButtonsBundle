@@ -1,0 +1,20 @@
+{
+  "name": "eab/share-buttons-bundle",
+  "description": "Add a Pinterest button to EzSystemsShareButtonsBundle for eZ Publish/eZ Platform",
+  "keywords": ["share", "social", "buttons", "facebook", "google plus", "linkedin", "twitter"],
+  "license": "GPL-2.0",
+  "authors": [
+    {
+      "name": "Andy Caiger",
+      "homepage": "http://www.github.com/eab-dev"
+    }
+  ],
+  "require": {
+    "ezsystems/share-buttons-bundle": "~1.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Eab\\ShareButtonsBundle\\": ""
+    }
+  }
+}

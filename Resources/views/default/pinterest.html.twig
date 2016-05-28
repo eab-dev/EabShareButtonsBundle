@@ -1,0 +1,19 @@
+{# This is only for the 'Any image' option. pinit.js must be loaded only once #}
+
+{% block share_buttons_service %}
+    {% if round %}
+        {% set button = large ? 'pinit_fg_' ~ language ~ '_round_red_32.png' : 'pinit_fg_' ~ language ~ '_round_red_16.png' %}
+    {% else %}
+        {% set button = large ? 'pinit_fg_' ~ language ~ '_round_' ~ color ~ '_28.png' : 'pinit_fg_' ~ language ~ '_rect_' ~ color ~ '_20.png' %}
+    {% endif %}
+    <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+    <a data-pin-do="buttonBookmark"
+       {% if large %} data-pin-tall="true"{% endif %}
+       {% if round %} data-pin-round="true"{% else %}
+       {% if color != "gray" %} data-pin-color="{{ color }}"{% endif %}
+       {% endif %}
+       {% if language != "en" %} data-pin-lang="{{ language }}"{% endif %}
+       href="https://www.pinterest.com/pin/create/button/">
+        <img src="//assets.pinterest.com/images/pidgets/{{ button }}" />
+    </a>
+{% endblock %}

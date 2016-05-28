@@ -1,0 +1,19 @@
+parameters:
+
+    eab_share_buttons.provider.factory.class: Eab\ShareButtonsBundle\SocialShare\Provider\SiteAccessAwareFactory
+    eab_share_buttons.provider.pinterest.class: Eab\HVABundle\SocialShare\Provider\PinterestProvider
+
+services:
+
+    eab_share_buttons.provider.factory:
+        class: %eab_share_buttons.provider.factory.class%
+        arguments:
+            - @ezpublish.config.resolver
+
+    # Pinterest share button
+    ez_share_buttons.provider.pinterest:
+        class: %eab_share_buttons.provider.pinterest.class%
+        factory: [ "@eab_share_buttons.provider.factory", buildPinterest ]
+        lazy: true
+        tags:
+            - { name: ez_share_buttons.provider, alias: pinterest }
